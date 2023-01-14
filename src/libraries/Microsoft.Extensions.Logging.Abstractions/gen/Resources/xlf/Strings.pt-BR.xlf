@@ -117,6 +117,16 @@
         <target state="translated">Múltiplos campos encontrados do tipo Microsoft.Extensions.Logging.ILogger</target>
         <note>{Locked="Microsoft.Extensions.Logging.ILogger"}</note>
       </trans-unit>
+      <trans-unit id="ParametersOutOfOrderMessage">
+        <source>Logging method '{0}' contains parameters out of order provided in the message template</source>
+        <target state="new">Logging method '{0}' contains parameters out of order provided in the message template</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ParametersOutOfOrderTitle">
+        <source>Logging method contains parameters out of order provided in the message template</source>
+        <target state="new">Logging method contains parameters out of order provided in the message template</target>
+        <note />
+      </trans-unit>
       <trans-unit id="RedundantQualifierInMessageMessage">
         <source>Remove redundant qualifier (Info:, Warning:, Error:, etc) from the logging message since it is implicit in the specified log level.</source>
         <target state="translated">Remova o qualificador redundante (Info:, Aviso:, Erro:, etc) da mensagem de log, pois está implícito no nível de log especificado.</target>

@@ -228,4 +228,10 @@
   <data name="ShouldntReuseEventNamesTitle" xml:space="preserve">
     <value>Multiple logging methods should not use the same event name within a class</value>
   </data>
+  <data name="ParametersOutOfOrderTitle" xml:space="preserve">
+    <value>Logging method contains parameters out of order provided in the message template</value>
+  </data>
+  <data name="ParametersOutOfOrderMessage" xml:space="preserve">
+    <value>Logging method '{0}' contains parameters out of order provided in the message template</value>
+  </data>
 </root>

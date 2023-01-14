@@ -424,9 +424,12 @@ namespace Microsoft.Extensions.Logging.Generators
                                             keepMethod = false;
                                         }
 
+                                        bool parametersOutOfOrder = false;
+                                        int previousArgumentIndex = -1;
                                         foreach (KeyValuePair<string, string> t in lm.TemplateMap)
                                         {
                                             bool found = false;
+                                            int currentArgumentIndex = 0;
                                             foreach (LoggerParameter p in lm.AllParameters)
                                             {
                                                 if (t.Key.Equals(p.Name, StringComparison.OrdinalIgnoreCase) ||
@@ -436,12 +439,24 @@ namespace Microsoft.Extensions.Logging.Generators
                                                     found = true;
                                                     break;
                                                 }
+                                                currentArgumentIndex++;
                                             }
 
                                             if (!found)
                                             {
                                                 Diag(DiagnosticDescriptors.TemplateHasNoCorrespondingArgument, ma.GetLocation(), t.Key);
                                             }
+                                            else if (previousArgumentIndex > currentArgumentIndex)
+                                            {
+                                                parametersOutOfOrder = true;
+                                            }
+
+                                            previousArgumentIndex = currentArgumentIndex;
+                                        }
+
+                                        if (parametersOutOfOrder)
+                                        {
+                                            Diag(DiagnosticDescriptors.ParametersOutOfOrder, method.GetLocation(), lm.Name);
                                         }
                                     }
 

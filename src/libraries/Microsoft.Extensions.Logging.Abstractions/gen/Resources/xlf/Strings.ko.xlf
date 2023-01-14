@@ -117,6 +117,16 @@
         <target state="translated">Microsoft.Extensions.Logging.ILogger 형식의 필드가 여러 개 있음</target>
         <note>{Locked="Microsoft.Extensions.Logging.ILogger"}</note>
       </trans-unit>
+      <trans-unit id="ParametersOutOfOrderMessage">
+        <source>Logging method '{0}' contains parameters out of order provided in the message template</source>
+        <target state="new">Logging method '{0}' contains parameters out of order provided in the message template</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ParametersOutOfOrderTitle">
+        <source>Logging method contains parameters out of order provided in the message template</source>
+        <target state="new">Logging method contains parameters out of order provided in the message template</target>
+        <note />
+      </trans-unit>
       <trans-unit id="RedundantQualifierInMessageMessage">
         <source>Remove redundant qualifier (Info:, Warning:, Error:, etc) from the logging message since it is implicit in the specified log level.</source>
         <target state="translated">중복 한정자(정보:, 경고:, 오류: 등)가 지정된 로그 수준에서 암시적이기 때문에 로깅 메시지에서 제거합니다.</target>

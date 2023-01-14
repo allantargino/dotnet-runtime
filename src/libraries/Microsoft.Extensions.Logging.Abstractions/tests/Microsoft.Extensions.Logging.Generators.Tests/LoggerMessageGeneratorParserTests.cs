@@ -360,6 +360,29 @@ namespace Microsoft.Extensions.Logging.Generators.Tests
 #endif
 
         [Fact]
+        public async Task ParametersOutOfOrderInMessageTemplate()
+        {
+            IReadOnlyList<Diagnostic> diagnostics = await RunGenerator(@"
+                partial class C
+                {
+                    [LoggerMessage(EventId = 0, Level = LogLevel.Debug, Message=""{a3},{a1},{a4},{a2}"")]
+                    static partial void M1(ILogger logger, int a1, int a2, int a3, int a4);
+
+                    [LoggerMessage(EventId = 1, Message=""{a2},{a3},{a1}"")]
+                    static partial void M2(ILogger logger, int a1, LogLevel l, int a2, System.Exception e, int a3);
+                }
+            ");
+
+            Assert.Equal(2, diagnostics.Count);
+
+            Assert.Equal(DiagnosticDescriptors.ParametersOutOfOrder.Id, diagnostics[0].Id);
+            Assert.Contains("M1", diagnostics[0].GetMessage());
+
+            Assert.Equal(DiagnosticDescriptors.ParametersOutOfOrder.Id, diagnostics[1].Id);
+            Assert.Contains("M2", diagnostics[1].GetMessage());
+        }
+
+        [Fact]
         public async Task InvalidParameterName()
         {
             IReadOnlyList<Diagnostic> diagnostics = await RunGenerator(@"
@@ -851,7 +874,8 @@ namespace Microsoft.Extensions.Logging.Generators.Tests
                 }}
             ");
 
-            Assert.Empty(diagnostics);
+            Assert.Single(diagnostics);
+            Assert.Equal(DiagnosticDescriptors.ParametersOutOfOrder.Id, diagnostics[0].Id);
         }
 
         private static async Task<IReadOnlyList<Diagnostic>> RunGenerator(

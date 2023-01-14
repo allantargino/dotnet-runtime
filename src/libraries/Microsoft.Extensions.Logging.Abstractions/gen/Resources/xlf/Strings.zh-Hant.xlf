@@ -117,6 +117,16 @@
         <target state="translated">找到多個 Microsoft.Extensions.Logging.ILogger 類型的欄位</target>
         <note>{Locked="Microsoft.Extensions.Logging.ILogger"}</note>
       </trans-unit>
+      <trans-unit id="ParametersOutOfOrderMessage">
+        <source>Logging method '{0}' contains parameters out of order provided in the message template</source>
+        <target state="new">Logging method '{0}' contains parameters out of order provided in the message template</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ParametersOutOfOrderTitle">
+        <source>Logging method contains parameters out of order provided in the message template</source>
+        <target state="new">Logging method contains parameters out of order provided in the message template</target>
+        <note />
+      </trans-unit>
       <trans-unit id="RedundantQualifierInMessageMessage">
         <source>Remove redundant qualifier (Info:, Warning:, Error:, etc) from the logging message since it is implicit in the specified log level.</source>
         <target state="translated">從記錄訊息中移除備援限定詞 (資訊:、警告:、錯誤: 等等)，因為它在指定的記錄層級中為隱含。</target>

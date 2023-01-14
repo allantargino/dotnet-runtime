@@ -199,5 +199,13 @@ namespace Microsoft.Extensions.Logging.Generators
             category: "LoggingGenerator",
             DiagnosticSeverity.Warning,
             isEnabledByDefault: true);
+
+        public static DiagnosticDescriptor ParametersOutOfOrder { get; } = new DiagnosticDescriptor(
+            id: "SYSLIB1026",
+            title: new LocalizableResourceString(nameof(SR.ParametersOutOfOrderTitle), SR.ResourceManager, typeof(FxResources.Microsoft.Extensions.Logging.Generators.SR)),
+            messageFormat: new LocalizableResourceString(nameof(SR.ParametersOutOfOrderMessage), SR.ResourceManager, typeof(FxResources.Microsoft.Extensions.Logging.Generators.SR)),
+            category: "LoggingGenerator",
+            DiagnosticSeverity.Info,
+            isEnabledByDefault: true);
     }
 }
