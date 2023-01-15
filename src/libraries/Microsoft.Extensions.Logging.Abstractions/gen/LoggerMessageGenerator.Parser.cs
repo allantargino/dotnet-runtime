@@ -443,6 +443,20 @@ namespace Microsoft.Extensions.Logging.Generators
                                                 Diag(DiagnosticDescriptors.TemplateHasNoCorrespondingArgument, ma.GetLocation(), t.Key);
                                             }
                                         }
+
+                                        // Can't have the same template with different casing
+                                        foreach (IGrouping<string, string> parametersGroup in lm.TemplateList.GroupBy(s => s, StringComparer.OrdinalIgnoreCase))
+                                        {
+                                            foreach (string parameter in parametersGroup)
+                                            {
+                                                if (!parametersGroup.Key.Equals(parameter, StringComparison.Ordinal))
+                                                {
+                                                    Diag(DiagnosticDescriptors.InconsistentTemplateCasing, method.GetLocation(), parametersGroup.Key);
+                                                    keepMethod = false;
+                                                    break;
+                                                }
+                                            }
+                                        }
                                     }
 
                                     if (lc == null)

@@ -18,8 +18,13 @@
         <note />
       </trans-unit>
       <trans-unit id="InconsistentTemplateCasingMessage">
-        <source>Can't have the same template with different casing</source>
-        <target state="translated">Nemůže mít stejnou šablonu s různým zápisem velkých a malých písmen.</target>
+        <source>Parameter '{0}' has inconsistent template casing</source>
+        <target state="new">Parameter '{0}' has inconsistent template casing</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="InconsistentTemplateCasingTitle">
+        <source>Parameter has inconsistent template casing</source>
+        <target state="new">Parameter has inconsistent template casing</target>
         <note />
       </trans-unit>
       <trans-unit id="InvalidLoggingMethodNameMessage">

@@ -325,23 +325,23 @@ namespace Microsoft.Extensions.Logging.Generators.Tests
             Assert.Empty(diagnostics);
         }
 
-#if false
-        // TODO: can't have the same template with different casing
         [Fact]
         public async Task InconsistentTemplateCasing()
         {
             IReadOnlyList<Diagnostic> diagnostics = await RunGenerator(@"
                 partial class C
                 {
-                    [LoggerMessage(EventId = 0, Level = LogLevel.Debug, Message = ""M1 {p1} {P1}"")]
-                    static partial void M1(ILogger logger, int p1, int P1);
+                    [LoggerMessage(EventId = 0, Level = LogLevel.Debug, Message = ""M1 {par1} {PAr1} {a}"")]
+                    static partial void M1(ILogger logger, int par1, int a);
                 }
             ");
 
             Assert.Single(diagnostics);
             Assert.Equal(DiagnosticDescriptors.InconsistentTemplateCasing.Id, diagnostics[0].Id);
+            Assert.Contains("par1", diagnostics[0].GetMessage());
         }
 
+#if false
         // TODO: can't have malformed format strings (like dangling {, etc)
         [Fact]
         public async Task MalformedFormatString()

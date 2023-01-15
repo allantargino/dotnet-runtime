@@ -162,7 +162,7 @@ namespace Microsoft.Extensions.Logging.Generators
 
         public static DiagnosticDescriptor InconsistentTemplateCasing { get; } = new DiagnosticDescriptor(
             id: "SYSLIB1021",
-            title: new LocalizableResourceString(nameof(SR.InconsistentTemplateCasingMessage), SR.ResourceManager, typeof(FxResources.Microsoft.Extensions.Logging.Generators.SR)),
+            title: new LocalizableResourceString(nameof(SR.InconsistentTemplateCasingTitle), SR.ResourceManager, typeof(FxResources.Microsoft.Extensions.Logging.Generators.SR)),
             messageFormat: new LocalizableResourceString(nameof(SR.InconsistentTemplateCasingMessage), SR.ResourceManager, typeof(FxResources.Microsoft.Extensions.Logging.Generators.SR)),
             category: "LoggingGenerator",
             DiagnosticSeverity.Error,

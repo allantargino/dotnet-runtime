@@ -208,7 +208,10 @@
     <comment>{Locked="Microsoft.Extensions.Logging.ILogger"}</comment>
   </data>
   <data name="InconsistentTemplateCasingMessage" xml:space="preserve">
-    <value>Can't have the same template with different casing</value>
+    <value>Parameter '{0}' has inconsistent template casing</value>
+  </data>
+  <data name="InconsistentTemplateCasingTitle" xml:space="preserve">
+    <value>Parameter has inconsistent template casing</value>
   </data>
   <data name="MalformedFormatStringsMessage" xml:space="preserve">
     <value>Can't have malformed format strings (like dangling {, etc)</value>

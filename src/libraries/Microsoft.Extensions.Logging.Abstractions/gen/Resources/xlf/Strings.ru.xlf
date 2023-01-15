@@ -18,8 +18,13 @@
         <note />
       </trans-unit>
       <trans-unit id="InconsistentTemplateCasingMessage">
-        <source>Can't have the same template with different casing</source>
-        <target state="translated">Невозможно использовать шаблон с таким же именем в другом регистре</target>
+        <source>Parameter '{0}' has inconsistent template casing</source>
+        <target state="new">Parameter '{0}' has inconsistent template casing</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="InconsistentTemplateCasingTitle">
+        <source>Parameter has inconsistent template casing</source>
+        <target state="new">Parameter has inconsistent template casing</target>
         <note />
       </trans-unit>
       <trans-unit id="InvalidLoggingMethodNameMessage">

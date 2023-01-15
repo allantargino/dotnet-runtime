@@ -18,8 +18,13 @@
         <note />
       </trans-unit>
       <trans-unit id="InconsistentTemplateCasingMessage">
-        <source>Can't have the same template with different casing</source>
-        <target state="translated">동일한 템플릿을 대/소문자를 다르게 하여 사용할 수는 없음</target>
+        <source>Parameter '{0}' has inconsistent template casing</source>
+        <target state="new">Parameter '{0}' has inconsistent template casing</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="InconsistentTemplateCasingTitle">
+        <source>Parameter has inconsistent template casing</source>
+        <target state="new">Parameter has inconsistent template casing</target>
         <note />
       </trans-unit>
       <trans-unit id="InvalidLoggingMethodNameMessage">
